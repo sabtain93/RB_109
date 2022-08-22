@@ -59,7 +59,7 @@ This means that we can use any expression in a conditional, or with
 logical operators, and as long as it does not evaluates to `nil` or 
 `false` it is considered true but not the ruby object `true`.
 
-Eg:
+Eg 1:
 ```ruby
 num = 10
 
@@ -72,4 +72,10 @@ end
 # this is because in ruby everything truthy other than `false` and `nil`
 # and in the `if` caluse  the condition `num` returns `10` which evaluates to be true as it is neither `false` nor `nil`.
 ```
-
+Eg 2:
+```ruby
+num = 11
+num == true
+# this returns false, as `num` returns the Integer object 
+# `11` which evaluates to true but not equal to the object `true`
+```
