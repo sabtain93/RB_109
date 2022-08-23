@@ -2,7 +2,7 @@
 
 ## `if` Expression
 
-- The `if` expression has a `test` expression and a 
+The `if` expression has a `test` expression and a 
 'then' expreesion. if the `tets` expression is evaluated to be 
 true then the `then` expression is evaluated.
 The `else` expression can be added which will evaluate if all the
