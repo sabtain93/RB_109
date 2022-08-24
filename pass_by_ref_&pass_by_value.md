@@ -47,10 +47,3 @@ But there are mthods which are destructive but do not follow the above mentioned
 Objects can be mutable or immutable. Mutable objects can be mutated i.e. there values can be altered. Immutable object canno be mutated i.e. there values cannot be altered but can be reassigned.
 
 
-
-on `line 1` local varibale `a` is being initialized to the return value of the `puts` method invocation
-with a string object `choclate` passed as an argument. 'a' is pointing to the `Nilclass` object `nil`.
-On `line 2` local variable `b` is beign initialized to the string object `Vanilla`. Then on `line 4` to
-`line 8` we have an `if` expression. Then first `if` condition is `a` and as a is pointing to `nil` it evaluates
-to false so the `elsif` condition is evaluated which is `b` which points to the string object `Vanilla` which 
-evaluates to true. So the `line 7` in the conditinal statement is executed which outputs `Vanilla` and returns `nil`.

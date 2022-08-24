@@ -30,7 +30,7 @@ print_name do
 end
 # outputs `sabtain`, the block is not executed as the method is not defined to use a block
 ```
-In the above code the method is invoked with a `do..end` block but it isn't used as the method is not defines to use the block in any way. 
+In the above code the method is invoked with a `do..end` block but it isn't used, as the method is not defines to use the block in any way. 
 
 ```ruby
 def print_name
@@ -58,12 +58,9 @@ eg:
 # Array#map method uses the return value of the block to return an new array based on the block return value.
 ```
 
-
-
-
 ## Summary:
 
-Method definition cannot access local variables initialized outside the method definition nor can they be reassigned from inside a method definition. Blocks can access local varibales initialized outside the block and can reassign the local varibale inside the block which is visible outside the scope of the block.
+Method definition cannot directly access local variables initialized outside the method definition nor can they be reassigned from inside a method definition. Blocks can access local varibales initialized outside the block and can reassign the local varibale inside the block which is visible outside the scope of the block. Methods can access local variables passed in as arguments and through interaction with blocks.
 
 1. The `def..end` construction in Ruby is method definition.
 

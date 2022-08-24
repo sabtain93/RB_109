@@ -2,7 +2,7 @@
 
  ## local varibale scope regarding method invocation with blocks
 
-- Ruby blocks `{..}` or `do..end` create a new scope for local variables. The scope created by block followed by a method invocation
+Ruby blocks `{..}` or `do..end` create a new scope for local variables. The scope created by block followed by a method invocation
 is an inner scope. A local varibale scope is determined by where it is intialized. So the key point is that a local varibale initialized in an outer scope cannot be accessed in an inner scope but not the other way around.
 
 Eg: outer scope local variables can be accessed by inner scope
@@ -33,7 +33,7 @@ puts b # raises an error undefined local varibale or method
 ```
 ### Variable shadowing
 
-- some method invocation are passed blocks as arguments, the block can have
+some method invocation are passed blocks as arguments, the block can have
 a parameter. 
 eg:
 ```ruby
