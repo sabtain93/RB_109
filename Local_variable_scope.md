@@ -1,6 +1,6 @@
 # local variable scope, especially how local variables interact with method invocations with blocks and method definitions
 
- ## local varibale scope regarding method invocation with blocks
+ ## local varibale scope w.r.t method invocation with blocks
 
 Ruby blocks `{..}` or `do..end` create a new scope for local variables. The scope created by block followed by a method invocation
 is an inner scope. A local varibale scope is determined by where it is intialized. So the key point is that a local varibale initialized in an outer scope cannot be accessed in an inner scope but not the other way around.
@@ -33,13 +33,12 @@ puts b # raises an error undefined local varibale or method
 ```
 ### Variable shadowing
 
-some method invocation are passed blocks as arguments, the block can have
-a parameter. 
+some method invocation are passed blocks as arguments, the block can have a parameter. 
 eg:
 ```ruby
 [1, 2, 3].each { |n| puts n }
 ```
-In the above code the each method is invoked on an array of integers with a block `{..}` passed as an agrument which has a parameter `n`. If a local variable was initalized in the outer scope with same name as the block parameter. In this case it is called variable shadowing and this prevents access of the outer scope varibale
+In the above code the each method is invoked on an array of integers with a block `{..}` passed as an agrument which has a parameter `n`. As in this case a local variable was initalized in the outer scope with same name as the block parameter this is called variable shadowing and this prevents access of the outer scope local varibale. The block parameter shadows the outer scope local variable. 
 
 eg:
 ```ruby
@@ -53,7 +52,7 @@ end
 ```
 variable shadowing also prevent from making changes to the outer scope variable `num` in the inner scope.
 
-## Local varibale scope regarding method definition
+## Local varibale scope w.r.t method definition
 
 A method defintion scope is self-contained. Methods can only access local varibales which are initalized within the method definition or that are defined as parameters.
 

@@ -21,4 +21,4 @@ the loop iterates only once as the 'break'keyword terminates the loop on `line 8
 - on `line 11` `puts` method is invoked with the local varibale a passed to it as an argument. On line `12` we invoke the method `puts` with local varibale b passed to it as an argument.
 The code outputs `5` and return `nil` as the return value of `puts` method is `nil`. The `puts` method call on `line 12` raises an error, as per the ruby varibale scoping rules, a local variable initialized inside a block is not accessible in the outer scope.
 
-## local variables that are initialized in an inner scope CAN’T be accessed in the outer scope, but local variables that are initialized in the outer scope CAN be accessed in an inner scope.
+> *local variables that are initialized in an inner scope CAN’T be accessed in the outer scope, but local variables that are initialized in the outer scope CAN be accessed in an inner scope.*
