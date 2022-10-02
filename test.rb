@@ -1,10 +1,11 @@
-a = 4
+a = 'b'
 
-loop do
-  a = 5
-  b = 3
-  break
-end
+b = 'c'
 
-puts a
-puts b
+arr = [a, b]
+
+
+
+p arr
+p a
+
