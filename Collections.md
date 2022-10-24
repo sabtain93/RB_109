@@ -45,8 +45,7 @@ same object at that index.
 
 The `Array#slice` method can be used to reference an element from
 an array using range, index & length or only index as parameters.
-The `Array#slice` when given an index returns the object. But with range or index & length as parameters a new array is returned as
-shown in the example below.
+The `Array#slice` when given an index returns the object. But with range or index & length as parameters a new array is returned as shown in the example below.
 
 ```ruby
 arr = [:a, 'b', 23, 'hello']
@@ -959,7 +958,7 @@ As we can see that by updating the nested array in `arr` we also updated the ele
 
 ## Shallow copy
 
-When working with collections there might be a time when we want to copy a collection as whole before we make some major modifications. Ruby provides with methods that lets us make copies of objects and collections: `dup` and `clone`. Both of these methods create a shallow copy of the object they are called on. Shallow copy means that the object it is called on is copied but if the object on which the method is called on conatins other object, then thoes object are shred not copied.
+When working with collections there might be a time when we want to copy a collection as whole before we make some major modifications. Ruby provides with methods that lets us make copies of objects and collections: `dup` and `clone`. Both of these methods create a shallow copy of the object they are called on. Shallow copy means that the object it is called on is copied but if the object on which the method is called on conatins other object, then thoes object are shared not copied.
 
 `dup` and `clone` allows object within the copied object to be modified.
 

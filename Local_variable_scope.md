@@ -2,8 +2,7 @@
 
  ## local varibale scope w.r.t method invocation with blocks
 
-Ruby blocks `{..}` or `do..end` create a new scope for local variables. The scope created by block followed by a method invocation
-is an inner scope. A local varibale scope is determined by where it is intialized. So the key point is that a local varibale initialized in an outer scope cannot be accessed in an inner scope but not the other way around.
+Ruby blocks `{..}` or `do..end` create a new scope for local variables. The scope created by block followed by a method invocation is an inner scope. A local varibale scope is determined by where it is intialized. So the key point is that a local varibale initialized in an outer scope can be accessed in an inner scope but not the other way around.
 
 Eg: outer scope local variables can be accessed by inner scope
 ```ruby
@@ -38,7 +37,7 @@ eg:
 ```ruby
 [1, 2, 3].each { |n| puts n }
 ```
-In the above code the each method is invoked on an array of integers with a block `{..}` passed as an agrument which has a parameter `n`. As in this case a local variable was initalized in the outer scope with same name as the block parameter this is called variable shadowing and this prevents access of the outer scope local varibale. The block parameter shadows the outer scope local variable. 
+In the above code the each method is invoked on an array of integers with a block `{..}` passed as an agrument which has a parameter `n`. 
 
 eg:
 ```ruby
@@ -50,6 +49,7 @@ end
 
 # `puts num` disregards the outer scope `num` and uses the block paramter which represents the elements of the Integer array
 ```
+As in this case above a local variable was initalized in the outer scope with same name as the block parameter this is called variable shadowing and this prevents access of the outer scope local varibale inside the block. The block parameter shadows the outer scope local variable. 
 variable shadowing also prevent from making changes to the outer scope variable `num` in the inner scope.
 
 ## Local varibale scope w.r.t method definition

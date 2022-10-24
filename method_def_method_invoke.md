@@ -14,7 +14,7 @@ Method invocation is when a method is called, wether it is an exisiting ruby met
 ```ruby
 print_name
 ```
-methods can be called with a block, but the block is only executed if the method defined in a particular way.
+methods can be called with a block, but the block is only executed if the method is defined in a particular way.
 
 When a method is invoked with a block, the block is passed in as an argument.
 
@@ -30,7 +30,7 @@ print_name do
 end
 # outputs `sabtain`, the block is not executed as the method is not defined to use a block
 ```
-In the above code the method is invoked with a `do..end` block but it isn't used, as the method is not defines to use the block in any way. 
+In the above code the method is invoked with a `do..end` block but it isn't used, as the method is not defined to use the block in any way. 
 
 ```ruby
 def print_name
@@ -47,8 +47,7 @@ end
 # outputs "sabtain"
 # the keyword `yeild` enables the method to execute the block once
 ```
-Methods and blocks can interact with each other and the level of interaction is set by the method definition and used at method
-invocation.
+Methods and blocks can interact with each other and the level of interaction is set by the method definition and used at method invocation.
 
 when defining methods we can also set that when we invoke the methdo with a block, it is not limited to executing the code in the block but can also use the return value of the block.
 

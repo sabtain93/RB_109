@@ -15,3 +15,26 @@ The `if` expression is complete when either the `if` condition or
 
 The return value of an `if` expression is the last value executed in the expression. If no condition is met the return value of the `if` 
 expression is `nil`.
+
+## `break` statement
+
+`break` is used to leave the block early 
+
+```ruby
+arr = [1, 2, 3]
+arr.each do |value|
+  break if value.odd?
+end
+```
+In the above code `each` will stop iterating over the elements in `arr` if one of them is odd.
+
+`break` accepts a value that supplies the result of the expression it is "breaking" out of.
+
+```ruby
+arr = [1, 2, 3]
+result = arr.each do |value|
+  break value if value.odd?
+end
+
+p result # prints 1
+```

@@ -94,7 +94,7 @@ Objects can be mutable or immutable. Mutable objects can be mutated i.e. there v
 
 ## Immutable objects
 
-In ruby `Integer`, `True`, `False`, `Nil` and `Symbol` class objects are immutable. This is the respective classes do not contain any method which mutates the object.
+In ruby `Integer`, `True`, `False`, `Nil` and `Symbol` class objects are immutable. This is because the respective classes do not contain any method which mutates the object.
 
 
 ## Mutable objects
@@ -104,5 +104,9 @@ Most of the objects in Ruby are mutable. They are objets of class that permit ch
 ## Non - mutating methods
 
 A method is non mutating w.r.t the caller object or the argument passed in if the given object is not mutated. In Ruby there are some methods that do mutate the caller but a few mutate the arguments.All methods are non-mutating w.r.t immutable objects.
+
+## reassignment
+
+What this shows is that reassignment to a variable doesn’t mutate the object referenced by that variable; instead, the variable is bound to a different object.
 
 

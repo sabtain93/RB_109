@@ -42,4 +42,4 @@ names = %w('ali', 'sabtain', 'yusuf')
 print_name(names)
 ```
 In the above code the local varibale `name` is being passed as an argument
-to the method `print_name`. ruby passes the copy of the refrence contained by the `names` variable to the method local varibale `arr`. The operations being performed on `arr` will determine wehter the object beign refrenced by `a` will be subject to mutation.
+to the method `print_name`. ruby passes the copy of the refrence contained by the `names` variable to the method local varibale `arr`. The operations being performed on `arr` will determine wehter the object beign refrenced by `arr` will be subject to mutation.
