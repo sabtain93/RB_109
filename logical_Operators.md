@@ -54,10 +54,7 @@ In the above code the `||` short circuited at the first expression as it evaluat
 
 ## Truthiness
 
-Ruby consider everything to be truthy other than `false` and `nil`.
-This means that we can use any expression in a conditional, or with 
-logical operators, and as long as it does not evaluates to `nil` or 
-`false` it is considered true but not the ruby object `true`.
+Ruby consider everything to be truthy other than `false` and `nil`.This means that we can use any expression in a conditional, or with logical operators, and as long as it does not evaluates to `nil` or `false` it is considered true but not the ruby object `true`.
 
 Eg 1:
 ```ruby
