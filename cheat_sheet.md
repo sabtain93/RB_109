@@ -16,7 +16,7 @@ the `each` method is called on the nested array `[[1, 2], [3, 4]]`. Each array i
 
 ***Expalin how does the `Array#each` method works?***
 
-The `Array#each` method is invoked with a block passed to it an argument. The `each` method invokes the block on each iteration and passes the current element of the array object into the block, assigning it to the block's local variable. The `Array#each` method does not care for the block's return value and returns the original calling object.
+The `Array#each` method is invoked with a block passed to it an argument. The `each` method invokes the block on each iteration and passes the current element of the array object into the block, assigning it to the block's local variable. The expression within the block is executed for each element of the calling collection. The `Array#each` method returns the original calling object regardless of the block's return value.
 
 ## map
 
@@ -31,11 +31,11 @@ end
 
 ***Explain how `Array#map` method works?***
 
-The `Array#map` method is invoked with a block passed to it as an argument. The `map` method invokes the block on each iteration and passes the current element of the calling array into the block assigning it to the block's local variable. The `Array#map` method uses the block's return value and it performs transformation based on it. The `map` method returns a new array with same number of elements as in the calling collection which are now transformed based on the return value of the block on each iteration.
+The `Array#map` method is invoked with a block passed to it as an argument. The `map` method invokes the block on each iteration and passes the current element of the calling array into the block, assigning it to the block's local variable and executing the expression within the block for each element of the calling collection. The `Array#map` method returns a new array where each element is the block's return value on each iteration.
 
 ***Explain how `Hash#map` method works?***
 
-The `Hash#map` method is invoked with a block passed to it as an argument. The `map` method invokes the block on each iteration and passes the current key/value pair into the block assigning the pair to the block's local variables. Where the first local variable of the block represents the current key and the second represents the current value . `Hash#map` uses the block's return value to perform trasnformation. It returns a new array object where each element is the block's return value.
+The `Hash#map` method is invoked with a block passed to it as an argument. The `map` method invokes the block on each iteration and passes the current key/value pair into the block assigning the pair to the block's local variables. Where the first local variable of the block references the current key and the second references the current value of the calling collection. The expression within the block is executed for each Key/value pair of hash. `Hash#map` uses the block's return value to perform trasnformation. It returns a new array object where each element is the block's return value on each iteration.
 
 ## Select
 
@@ -52,11 +52,11 @@ end
 
 ***Explain how `Array#select` works?***
 
-It is invoked with a block passed to it as an argument.The `select` method invokes the block on each iteration and passes the current element of the calling array into the block assigning it to the block's local variable. The `Array#select` method evaluates the return value of block for its truthiness. It returns a new array with the elements of the calling collection for which the the block returns a truthy value.
+It is invoked with a block passed to it as an argument.The `select` method invokes the block on each iteration and passes the current element of the calling array into the block assigning it to the block's local variable. The expression within the block is executed for each item of the calling collection. The `Array#select` method evaluates the return value of block for its truthiness. It returns a new array with the elements of the calling collection for which the the block returns a truthy value.
 
 ***Explain how `Hash#select` works?***
 
-It is invoked with a block passed to it. The `select` method invokes the block on each iteration and passes the current key/value pair into the block.Where the first local variable of the block represents the current key and the second represents the current value. The `Hash#select` method evaluates the return value of block for its truthiness. It returns a new hash with the Key/value pair of the calling collection for which the the block returns a truthy value.
+It is invoked with a block passed to it as an argument. The `select` method invokes the block on each iteration and passes the current key/value pair into the block.Where the first local variable of the block represents the current key and the second represents the current value. The expression within the block is executed for each key/value pair of the calling object. The `Hash#select` method evaluates the return value of block for its truthiness. It returns a new hash with the Key/value pair of the calling collection for which the the block returns a truthy value.
 
 ## sort/sort_by
 
