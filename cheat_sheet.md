@@ -12,11 +12,15 @@ end
  -->
 ```
 
-the `each` method is called on the nested array `[[1, 2], [3, 4]]`. Each array is passed into the block on each iteration and assigned to block's local variable `arr`. Within the block `Array#first` method is invoked on `arr`. The `Array#first` method returns the `0` index element of the current array, which in this case will be the integers `1` and `3` respectively. `puts` method is invoked and the return value of `arr.first` is passed to it as an argument. `puts` will output `1` and `3` to the console and returns `nil` which is the blocks return value, as this is the last statement evaluated by the the block. `each` method does not care for the blocks return value and returns the calling collection which in this case is `[[1, 2], [3, 4]]`.
+the `each` method is called on the nested array `[[1, 2], [3, 4]]`. `each` iterates over the elements of the calling array and invokes the block on each iteration passing in the current element where it is assigned to block's local variable `arr`. Within the block `Array#first` method is invoked on `arr`.
+
+The `Array#first` method returns the `0` index element of the current array that `arr` refrences, which in this case will be the integers `1` and `3` respectively. `puts` method is invoked and the return value of `arr.first` is passed to it as an argument. `puts` will output `1` and `3` to the console and returns `nil` which is the blocks return value, as this is the last statement evaluated by the the block.
+
+`each` method does not care for the blocks return value and returns the calling collection which in this case is `[[1, 2], [3, 4]]`.
 
 ***Expalin how does the `Array#each` method works?***
 
-The `Array#each` method is invoked with a block passed to it an argument. The `each` method invokes the block on each iteration and passes the current element of the array object into the block, assigning it to the block's local variable. The expression within the block is executed for each element of the calling collection. The `Array#each` method returns the original calling object regardless of the block's return value.
+The `Array#each` method is invoked with a block passed to it an argument. The `each` method iterates over the elements of the caling collection and invokes the block on each iteration passing the current element into the block where it is assigned to the block's local variable. The expression within the block is executed for each element of the calling collection. The `Array#each` method returns the original calling object regardless of the block's return value.
 
 ## map
 
@@ -27,15 +31,19 @@ The `Array#each` method is invoked with a block passed to it an argument. The `e
 end
 ```
 
-`map` method is invoked on the nested array `[[1, 2], [3, 4]]`. Each nested array is passed into the block and is assigned to the block's local variable `arr`. inside the block on `line 3` `puts` method is invoked and the return value of `arr.first` is passed to it as an argument. `Array#first` method returns the `0` index element the current array which in this case will be the integer `1` and `3` respectively. Then `puts` outputs the string representation of the integer and returns `nil`. On `line 4` again `Array#first` method is called on `arr` which will return integers `1` and `3` respectively and this will also be the blocks return value as it's the last statement evaluated inside the block.  `map` returns a new array containing the objects returned by the block on each iteration and so in this case the map returns a new array `[1,3]`.
+`map` method is invoked on the nested array `[[1, 2], [3, 4]]`. `map` method iterates over the calling array and invokes the block on each itreration passing in the current element into the block where it is assigned to the block's local variable `arr`.
+
+Inside the block on line 3 `puts` method is invoked and the return value of `arr.first` is passed to it as an argument. `Array#first` method returns the `0` index element the current array which in this case will be the integer `1` and `3` respectively. Then `puts` outputs the string representation of the integer and returns `nil`.
+
+On `line 4` again `Array#first` method is called on `arr` which will return integers `1` and `3` respectively and this will also be the blocks return value as it's the last statement evaluated inside the block. `map` returns a new array containing the objects returned by the block on each iteration and so in this case the map returns a new array `[1,3]`.
 
 ***Explain how `Array#map` method works?***
 
-The `Array#map` method is invoked with a block passed to it as an argument. The `map` method invokes the block on each iteration and passes the current element of the calling array into the block, assigning it to the block's local variable and executing the expression within the block for each element of the calling collection. The `Array#map` method returns a new array where each element is the block's return value on each iteration.
+The `Array#map` method is invoked with a block passed to it as an argument. The `Array#map` method iterates over the elements of the calling collection and invokes the block on each iteration passing the current element into the block where the element is assigned to the block's local variable. On the each iteration, the code within the block is executed and the return value of the block is saved to a new array. This new array is then returned by the `map` method.
 
 ***Explain how `Hash#map` method works?***
 
-The `Hash#map` method is invoked with a block passed to it as an argument. The `map` method invokes the block on each iteration and passes the current key/value pair into the block assigning the pair to the block's local variables. Where the first local variable of the block references the current key and the second references the current value of the calling collection. The expression within the block is executed for each Key/value pair of hash. `Hash#map` uses the block's return value to perform trasnformation. It returns a new array object where each element is the block's return value on each iteration.
+The `Hash#map` method is invoked with a block passed to it as an argument. The `map` method iterates over elements of the calling hash and invokes the block on each iteration passing the current key/value pair into the block where it is assigned to the block's local variables. Where the first local variable of the block references the current key and the second references the current value of the calling hash. The expression within the block is executed for each Key/value pair of the hash. `Hash#map` uses the block's return value to perform trasnformation. It returns a new array object where each element is the block's return value on each iteration.
 
 ## Select
 
@@ -48,15 +56,21 @@ end
 # => [{ :c => "cat" }]
 ```
 
-`select` method is invoked on the array of hashes. Each hash is passed to the block and is assigned to the block's local varibale `hash`. Inside the block `Hash#all?` is invoked on `hash` which references to hashes `{ a: 'ant', b: 'elephant' }` and `{ c: 'cat' }` respectively. `all?` method returns `true` if for all the elements of the calling object the block returns a truthy value and if even for one element the block returns a falsy value then `all?` will return `false`. Inside the block the respective hash key string representaion refrenced by `key` is evaluated for equality with the `0` index character of the string referenced by `value`. For the `hash` value `{ a: 'ant', b: 'elephant' }` the `all?` returns `false` and `true` for the `hash` value `{ c: 'cat' }` and this will be the outer block's return value as it is the last statement evaluated. `select` method evaluates the truthiness of the blocks return value and perform selection based on it. `select` will return a new array with the selected elements which will be `[{ c: 'cat' }]`.
+`select` method is invoked on the array of hashes. The `select` method iterates over the elements of the calling hash and invokes the block on each iteration passing the current element into the block where it is assigned to the block's local varibale `hash`.
 
+Inside the block `Hash#all?` is invoked on `hash` which references to hashes `{ a: 'ant', b: 'elephant' }` and `{ c: 'cat' }` respectively. `all?` method returns `true` if for all the elements of the calling object the block returns a truthy value and if even for one element the block returns a falsy value then `all?` will return `false`.
+
+Inside the inner block the respective hash key string representaion returned by `key.to_s` is evaluated for equality with the `0` index character of the string referenced by `value`. For the `hash` value `{ a: 'ant', b: 'elephant' }` the `all?` returns `false` and `true` for `{ c: 'cat' }` and this will be the outer block's return value as it is the last statement evaluated within the outer block.
+
+`select` method evaluates the truthiness of the blocks return value and perform selection based on it. `select` will return a new array with the selected elements from the calling array for ehich the block returns a truthy value, which will be `[{ c: 'cat' }]`.
+s
 ***Explain how `Array#select` works?***
 
-It is invoked with a block passed to it as an argument.The `select` method invokes the block on each iteration and passes the current element of the calling array into the block assigning it to the block's local variable. The expression within the block is executed for each item of the calling collection. The `Array#select` method evaluates the return value of block for its truthiness. It returns a new array with the elements of the calling collection for which the the block returns a truthy value.
+It is invoked with a block passed to it as an argument.The `select` method iterates over the elements of the calling array and invokes the block on each iteration passing in the current element of the calling array into the block where it is assigned it to the block's local variable. The expression within the block is executed for each item of the calling collection. The `Array#select` method evaluates the return value of block for its truthiness. It returns a new array with the elements of the calling collection for which the the block returns a truthy value.
 
 ***Explain how `Hash#select` works?***
 
-It is invoked with a block passed to it as an argument. The `select` method invokes the block on each iteration and passes the current key/value pair into the block.Where the first local variable of the block represents the current key and the second represents the current value. The expression within the block is executed for each key/value pair of the calling object. The `Hash#select` method evaluates the return value of block for its truthiness. It returns a new hash with the Key/value pair of the calling collection for which the the block returns a truthy value.
+It is invoked with a block passed to it as an argument. The `select` method iterates over the key/value pair of the calling hash and invokes the block on each iteration passing the current key/value pair into the block. Where the first local variable of the block references the current key and the second references the current value. The expression within the block is executed for each key/value pair of the calling hash object. The `Hash#select` method evaluates the return value of block for its truthiness. It returns a new hash with the Key/value pair of the calling collection for which the the block returns a truthy value.
 
 ## sort/sort_by
 
@@ -94,7 +108,13 @@ It is usally called with a block. The block determines how the items are compare
   word[1]
 end
 ```
-In the above code the characters at index `1` is beign compared of each string. So only characters `'o'`, `'e'` and `'a'` the rest are ignored.
+In the above code the characters at index `1` is beign compared of each string. So only characters `'o'`, `'e'` and `'a'` are compared the rest are ignored.
+
+On line 107 the `sort_by` method is invoked on the array object `['cot', 'bed', 'mat']` and passed in a block as an argument. Each element is passed into the block and is assigned to the block's local variable `word`.
+
+The `sort_by` method sorts the elements of the calling object based on the blocks return value, which in our case is the character at index `1` of the current element.
+
+`sort_by` uses `<=>` method to compare the return values of the block, and sort the elements in the calling array accordingly. `<=>` compares two values by returning `-1` if the first operand is smaller than the second, `0` if they are equal, `1` if the first operand is larger than the second.  In Ruby strings are sorted using ASCIIbetical order. so the array `["mat", "bed", "cot"]` is returned.
 
 **Hash#sort_by**
 

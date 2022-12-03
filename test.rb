@@ -1,11 +1,3 @@
-a = 'b'
-
-b = 'c'
-
-arr = [a, b]
-
-
-
-p arr
-p a
-
+for value in [1, 2, 3] do
+  puts value
+end
