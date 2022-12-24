@@ -7,20 +7,11 @@ The Pedac process is **one way** to solve problems. The motive behind pedac is t
 
 P - [Understand the] Problem
 
-
-
-
 E - Examples / Test cases
-
-
 
 D - Data Structure
 
-
-
 A - Algorithm
-
-
 
 C - Code
 
@@ -122,4 +113,15 @@ Implicit requirements:
   - If there are no palindrome substrings, return an empty array.
 
 =end
+```
+
+
+```ruby
+
+
+
+
+p alphabetized("The Holy Bible") #== "BbeehHilloTy"
+p alphabetized("!@$%^&*()_+=-`,") #== ""
+p alphabetized("CodeWars can't Load Today") #== "aaaaCcdddeLnooorstTWy"
 ```
