@@ -6,6 +6,10 @@ The Pedac process is **one way** to solve problems. The motive behind pedac is t
 
 
 P - [Understand the] Problem
+input:
+output:
+
+rules:
 
 E - Examples / Test cases
 
